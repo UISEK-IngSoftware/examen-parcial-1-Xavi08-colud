@@ -1,0 +1,14 @@
+ {% extends "base.html" %}
+ {% block title %}Listado de Peliculas{% endblock title %}
+ {% block content %}
+
+    <p>Has elegido la película: <strong>{{ movie|capfirst }}</strong></p>
+
+    <h3>Características</h3>
+    <ul>
+        <li>Género: {{ movie.genre }}</li>
+        <li>Duración: {{ movie.duration }} hrs.</li>
+        <li>Costo: {{ movie.cost }} $</li>
+    </ul>
+    <img src="{{ movie.picture.url }}" alt="{{ movie.name }} class= "img-thumball"/>
+ {% endblock content %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Listado de Peliculas{% endblock title %}
+{% block content %}
+
+<p class="p-2">Hola, bienvenido a mi app de Cine con Django</p>
+
+
+    <div class="row">
+        {% for movie in movies %}
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card">
+                <img src="{{ movie.picture.url }}" alt="{{ movie.name }}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{ movie.name }}</h5>
+                    <p class="card-text">Duracion: {{ movie.duration }} | Costo: {{ movie.cost }}</p>
+                    <a class="btn btn-primary" href="movie/{{movie.id}}" role="button">Ver Pelicula</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+{% endblock content %}
+
